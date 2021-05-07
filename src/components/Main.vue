@@ -1,7 +1,12 @@
 <template>
   <main>
-      <div v-if="!loading" class="cards">
 
+        <div>
+            <Search />
+        </div>
+        
+      <div v-if="!loading" class="cards">
+          
         <div v-for="artist in artists" 
         :key="artist.id"
          class="box">
@@ -10,19 +15,23 @@
             
         </div>
       </div>
+
       <div v-else class="loader">Loading...</div>
+
   </main>
 </template>
 
 <script>
 import axios from 'axios';
-import Artists from '@/components/Artists';
+import Artists from '@/components/Artists.vue';
+import Search from '@/components/Search.vue';
 
 
 export default {
     name: 'Main',
     components: {
-        Artists
+        Artists,
+        Search,
     },
     data() {
         return {
