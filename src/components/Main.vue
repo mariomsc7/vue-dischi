@@ -2,7 +2,7 @@
   <main>
 
         <div>
-            <Search />
+            <Search :info="filter"/>
         </div>
         
       <div v-if="!loading" class="cards">
@@ -38,6 +38,7 @@ export default {
             apiURL: 'https://flynn.boolean.careers/exercises/api/array/music',
             artists: [],
             loading: true,
+            
         }
     },
     created() {

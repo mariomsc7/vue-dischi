@@ -1,9 +1,9 @@
 <template>
   <div class="search">
-    <label for="type">Filter by gender :</label>
+    <label for="type">Filter by genre :</label>
     <select v-model="searchFilter" name="type" id="type">
-      <option disabled value="">Select a gender</option>
-      <option value=""></option>
+      <option disabled value="">Select a genre</option>
+      <option v-for="option in filter" :key="option.id">{{ option.genre }}</option>
     </select>
   </div>
 </template>
@@ -11,11 +11,7 @@
 <script>
 export default {
     name : 'Search',
-    data() {
-      return {
-        searchFilter: '',
-      }
-    }
+    props : ['filter']
 }
 </script>
 
